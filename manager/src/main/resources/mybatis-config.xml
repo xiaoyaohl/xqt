@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <!--lazyLoadingEnabled: lazy loading开关,默认为true。
+        全局性设置懒加载。如果设为‘false’，则所有相关联的都会被初始化加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--aggressiveLazyLoading 默认true：当访问任何一个属性都会加载所有的其他lazy load属性,
+        即使你根本没有调用哪个lazy load属性,说白了就是aggressiveLazyLoading=true,则lazy load等于没用,
+        所以要使用lazy load还是将其设为false    -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--开启驼峰命名-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="username" value="root"/>
+                <property name="password" value="520521hl"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/xqtDataBase?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true&amp;serverTimezone=GMT%2B8&amp;autoReconnect=true&amp;failOverReadOnly=false"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+</configuration>
