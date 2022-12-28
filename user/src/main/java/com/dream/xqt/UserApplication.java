@@ -15,8 +15,8 @@ import javax.annotation.ManagedBean;
 @SpringBootApplication
 @ManagedBean
 @MapperScan("com.dream.xqt")
-public class StartApplication {
+public class UserApplication {
     public static void main(String[] args) {
-        SpringApplication.run(StartApplication.class);
+        SpringApplication.run(UserApplication.class);
     }
 }

@@ -62,31 +62,13 @@ public class UserInfoDTO {
      * 学号
      */
     @TableField(value = "student_id")
-    private String student_id;
+    private String studentId;
 
     /**
      * 密码
      */
     @TableField(value = "password")
     private String password;
-
-    /**
-     * 学校id
-     */
-    @TableField(value = "university_id")
-    private Integer universityId;
-
-    /**
-     * 专业id
-     */
-    @TableField(value = "specialty_id")
-    private Integer specialtyId;
-
-    /**
-     * 班级id
-     */
-    @TableField(value = "class_id")
-    private Integer classId;
 
     /**
      * 头像链接
@@ -125,10 +107,34 @@ public class UserInfoDTO {
     private BigDecimal point;
 
     /**
+     * 锁定积分
+     */
+    @TableField(value = "lock_point")
+    private BigDecimal lockPoint;
+
+    /**
+     * 可用积分
+     */
+    @TableField(value = "available_point")
+    private BigDecimal availablePoint;
+
+    /**
      * 余额
      */
     @TableField(value = "amount")
     private BigDecimal amount;
+
+    /**
+     * 锁定余额
+     */
+    @TableField(value = "lock_amount")
+    private BigDecimal lockAmount;
+
+    /**
+     * 可用余额
+     */
+    @TableField(value = "available_amount")
+    private BigDecimal availableAmount;
 
     /**
      * 扩展字段

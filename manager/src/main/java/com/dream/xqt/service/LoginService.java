@@ -13,5 +13,5 @@ public interface LoginService {
      * @param loginBO
      * @return
      */
-    public LoginVO code2Session(LoginBO loginBO);
+    LoginVO code2Session(LoginBO loginBO);
 }

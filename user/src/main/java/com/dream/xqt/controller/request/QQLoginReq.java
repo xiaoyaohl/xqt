@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
  * @date 2022/7/17 12:56
  */
 @Data
-public class QQLoginRequest {
+public class QQLoginReq {
     /**
      * 登录时获取的code
      */

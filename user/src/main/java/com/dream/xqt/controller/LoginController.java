@@ -5,8 +5,9 @@ import com.dream.xqt.bo.LoginBO;
 import com.dream.xqt.common.request.SoaRequest;
 import com.dream.xqt.common.response.SoaResponse;
 import com.dream.xqt.common.utils.SoaResponseUtil;
-import com.dream.xqt.controller.request.QQLoginRequest;
-import com.dream.xqt.controller.response.QQLoginResponse;
+import com.dream.xqt.controller.request.GetUserInfoByOpenIdReq;
+import com.dream.xqt.controller.request.QQLoginReq;
+import com.dream.xqt.controller.response.QQLoginRsp;
 import com.dream.xqt.service.impl.LoginServiceImpl;
 import com.dream.xqt.vo.LoginVO;
 import lombok.extern.slf4j.Slf4j;
@@ -26,8 +27,8 @@ public class LoginController {
     private LoginServiceImpl loginService;
 
     @PostMapping("/login")
-    public SoaResponse<QQLoginResponse, Void> login(@RequestBody @Validated SoaRequest<QQLoginRequest> request) {
-        QQLoginRequest data = request.getData();
+    public SoaResponse<QQLoginRsp, Void> login(@RequestBody @Validated SoaRequest<QQLoginReq> request) {
+        QQLoginReq data = request.getData();
         log.info("LoginController.login req >>>>>>>> {}", JSON.toJSONString(data));
         LoginBO loginBO = LoginBO.builder()
                 .code(data.getCode())
@@ -37,7 +38,7 @@ public class LoginController {
 
         LoginVO loginVO = loginService.code2Session(loginBO);
 
-        QQLoginResponse response = QQLoginResponse.builder()
+        QQLoginRsp response = QQLoginRsp.builder()
                 .userId(loginVO.getUserId())
                 .qqOpenId(loginVO.getOpenId())
                 .qqUnionId(loginVO.getUnionId())
@@ -46,5 +47,4 @@ public class LoginController {
         return SoaResponseUtil.success(response);
     }
 
-    //TODO 通过openid获取用户信息
 }

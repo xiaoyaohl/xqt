@@ -1,15 +1,13 @@
 package com.dream.xqt.controller.response;
 
-import lombok.Builder;
 import lombok.Data;
 
 /**
  * @author xinxiaoyao
- * @date 2022/7/23 14:50
+ * @date 2022/11/6 12:45
  */
 @Data
-@Builder
-public class QQLoginResponse {
+public class GetUserInfoByOpenIdRsp {
     /**
      * 用户id
      */
@@ -24,5 +22,4 @@ public class QQLoginResponse {
      * 用户unionId
      */
     private String qqUnionId;
-
 }
